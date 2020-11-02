@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PortfolioBlogLibrary.GitScraper
 {
-    interface IGitHubScraper
+    public interface IGitHubScraper
     {
         IList<string> GetReadMeStrings();
     }
