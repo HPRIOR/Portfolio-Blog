@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioBlog", "PortfolioBlog.csproj", "{C4061FE1-08E2-4958-ABE6-76EFA26FE71F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioBlogLibrary", "..\PortfolioBlogLibrary\PortfolioBlogLibrary.csproj", "{74FE8BE9-1EBF-40DA-9E19-B45729AACA08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4061FE1-08E2-4958-ABE6-76EFA26FE71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4061FE1-08E2-4958-ABE6-76EFA26FE71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4061FE1-08E2-4958-ABE6-76EFA26FE71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4061FE1-08E2-4958-ABE6-76EFA26FE71F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FE8BE9-1EBF-40DA-9E19-B45729AACA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FE8BE9-1EBF-40DA-9E19-B45729AACA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FE8BE9-1EBF-40DA-9E19-B45729AACA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FE8BE9-1EBF-40DA-9E19-B45729AACA08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8F07AAA-5747-4282-9E7B-6810D301613C}
+	EndGlobalSection
+EndGlobal
