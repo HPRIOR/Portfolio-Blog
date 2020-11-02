@@ -14,8 +14,6 @@ namespace PortfolioBlogLibraryTests
         [Test]
         public void Test1()
         {
-            GitHubScraper git = new GitHubScraper();
-            Assert.AreEqual(git.GetReadMeStrings(), new List<string>() { "Hello world" });
         }
     }
 }
