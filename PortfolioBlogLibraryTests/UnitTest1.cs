@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using PortfolioBlogLibrary.GitScraper;
+using System.Collections.Generic;
 
 namespace PortfolioBlogLibraryTests
 {
@@ -12,7 +14,8 @@ namespace PortfolioBlogLibraryTests
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            GitHubScraper git = new GitHubScraper();
+            Assert.AreEqual(git.GetReadMeStrings(), new List<string>() { "Hello world" });
         }
     }
 }

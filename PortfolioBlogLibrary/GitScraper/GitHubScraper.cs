@@ -4,11 +4,12 @@ using System.Text;
 
 namespace PortfolioBlogLibrary.GitScraper
 {
-    class GitHubScraper : IGitHubScraper
+    public class GitHubScraper : IGitHubScraper
     {
-        IList<string> GetReadMeStrings()
+
+        public IList<string> GetReadMeStrings()
         {
-            return "";
+            return new List<string>() { "Hello world" };
         }
     }
 }
