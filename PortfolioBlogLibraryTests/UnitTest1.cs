@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PortfolioBlogLibraryTests
 {
-    public class Tests
+    public class GitHubScraperTests
     {
         [SetUp]
         public void Setup()
