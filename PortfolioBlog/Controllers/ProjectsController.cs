@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioBlog.Models;
-using Newtonsoft.Json;
-using System.IO;
-using Newtonsoft.Json.Linq;
-using System.Security.Cryptography.X509Certificates;
+using PortfolioBlogLibrary.GitScraper;
 
 namespace PortfolioBlog.Controllers
 {
@@ -19,6 +15,8 @@ namespace PortfolioBlog.Controllers
             
         public IActionResult Index()
         {
+
+
 
             return View();
         }
