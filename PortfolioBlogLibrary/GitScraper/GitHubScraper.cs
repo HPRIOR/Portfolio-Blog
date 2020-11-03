@@ -17,7 +17,6 @@ namespace PortfolioBlogLibrary.GitScraper
         public GitHubScraper(HttpClient httpClient)
         {
             _httpClient = httpClient;
-
         }
 
         public string GetUserUrl(string userName) => "https://github.com" + "/" + userName + "?tab=repositories";
