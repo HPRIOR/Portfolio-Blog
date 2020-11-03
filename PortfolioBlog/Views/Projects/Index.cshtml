@@ -8,7 +8,7 @@
 @foreach (var model in Model)
 {
     
-    <li>@Html.ActionLink(model.Title, "ProjectReadme", "Project")</li>
+    <li>@Html.ActionLink(model.Title.Remove(0, 8).Replace('-',' '), "ProjectReadMe", "Projects", model)</li>
 }
 
 </ul>

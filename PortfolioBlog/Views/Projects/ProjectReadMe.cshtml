@@ -2,7 +2,7 @@
 
 <article>
     <h1>
-        @Model.Title
+        @Model.Title.Remove(0, 8).Replace('-', ' ')
     </h1>    
     @Html.Raw(Model.ReadMe)
 
