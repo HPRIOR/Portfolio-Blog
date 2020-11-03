@@ -32,14 +32,18 @@ namespace PortfolioBlog.Controllers
                 node => node.GetAttributeValue("href", "default")
                 );
 
-            var models = repoList.ToList().Select(title => new Project { Title = title.Remove(0, 8).Replace('-',' ') });
+            var models = repoList.ToList().Select(title => new Project { Title = title });
 
             return View(models);
         }
 
-        public IActionResult ProjectReadMe(Project model)
+        public async Task<IActionResult> ProjectReadMe(Project project)
         {
-            return View();
+            var readMeUrl = _gitHubScraper.GetReadmeUrl(project.Title);
+            var htmlString = await _gitHubScraper.GetHtmlString(readMeUrl);
+            project.ReadMe = _gitHubScraper.ProcessHtmlToString(htmlString, "//*[@id='readme']");
+            
+            return View(project);
         }
     }
 }
