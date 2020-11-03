@@ -39,10 +39,18 @@ namespace PortfolioBlog.Controllers
 
         public async Task<IActionResult> ProjectReadMe(Project project)
         {
-            var readMeUrl = _gitHubScraper.GetReadmeUrl(project.Title);
-            var htmlString = await _gitHubScraper.GetHtmlString(readMeUrl);
-            project.ReadMe = _gitHubScraper.ProcessHtmlToString(htmlString, "//*[@id='readme']");
-            
+            try
+            {
+                var readMeUrl = _gitHubScraper.GetReadmeUrl(project.Title);
+                var htmlString = await _gitHubScraper.GetHtmlString(readMeUrl);
+                project.ReadMe = _gitHubScraper.ProcessHtmlToString(htmlString, "//*[@id='readme']");
+
+            }
+            catch(HttpRequestException)
+            {
+                project.ReadMe = "This project repository does not contain a readme";
+            }
+                       
             return View(project);
         }
     }
