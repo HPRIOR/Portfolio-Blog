@@ -4,7 +4,11 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-@foreach (var model in Model){
+<ul>
+@foreach (var model in Model)
+{
     
-    @Html.ActionLink(model.Title, "ProjectReadme", "Project")
+    <li>@Html.ActionLink(model.Title, "ProjectReadme", "Project")</li>
 }
+
+</ul>
