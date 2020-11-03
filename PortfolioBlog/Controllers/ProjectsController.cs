@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioBlog.Models;
 using PortfolioBlogLibrary.GitScraper;
@@ -10,18 +13,31 @@ namespace PortfolioBlog.Controllers
 {
     public class ProjectsController : Controller
     {
-
+        HttpClient _client;
+        IGitHubScraper _gitHubScraper;
+        public ProjectsController(HttpClient client, IGitHubScraper gitHubScraper)
+        {
+            _gitHubScraper = gitHubScraper;
+            _client = client;
+        }
         
             
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var htmlString = await _gitHubScraper.GetHtmlString(_gitHubScraper.GetUserUrl("HPRIOR"));
+            var repoList = _gitHubScraper
+                .ProcessHtmlToList(
+                htmlString, 
+                "//*[@id='user-repositories-list']/ul/li/div/div/h3/a", 
+                node => node.GetAttributeValue("href", "default")
+                );
 
+            var models = repoList.ToList().Select(title => new Project { Title = title.Remove(0, 8).Replace('-',' ') });
 
-
-            return View();
+            return View(models);
         }
 
-        public IActionResult ProjectReadMe()
+        public IActionResult ProjectReadMe(Project model)
         {
             return View();
         }
