@@ -1,5 +1,5 @@
 ﻿{
-    "id": 1,
-    "title": "This is test Blog 1",
-    "content": "This is a test blogpost \n it uses new line character to affect new lines, this may be a pain in the future, oh well..."
+    "Id": 1,
+    "Title": "This is test Blog 1",
+    "Content": "This is a test blogpost \n it uses new line character to affect new lines, this may be a pain in the future, oh well..."
 }

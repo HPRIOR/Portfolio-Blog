@@ -19,8 +19,8 @@ namespace PortfolioBlogLibraryTests
         public void SetUpTest()
         {
             blogParser = new BlogParser();
-            string blog1_json_string = File.ReadAllText(@"C:\Users\User\Documents\Code\PortfolioBlog\PortfolioWebTests\JsonTestBlogs\test_blog_1.json");
-            string blog2_json_string = File.ReadAllText(@"C:\Users\User\Documents\Code\PortfolioBlog\PortfolioWebTests\JsonTestBlogs\test_blog_2.json");
+            string blog1_json_string = File.ReadAllText(@"C:\Users\User\Documents\Code\PortfolioBlog\PortfolioBlogWebTests\JsonTestBlogs\test_blog_1.json");
+            string blog2_json_string = File.ReadAllText(@"C:\Users\User\Documents\Code\PortfolioBlog\PortfolioBlogWebTests\JsonTestBlogs\test_blog_2.json");
             blog1 = blogParser.GetBlog(blog1_json_string);
             blog2 = blogParser.GetBlog(blog2_json_string);
         }
@@ -43,7 +43,7 @@ namespace PortfolioBlogLibraryTests
         public void TestCorrectContent()
         {
             Assert.AreEqual(blog1.Content,"this is the content of test blog 1 with 1 new line \n this is the content of test blog 1 with 1 new line " );
-            Assert.AreEqual(blog1.Content, "this is the content of test blog 2 with 2 new line \n this is the content of test blog 2 with 2 new line ");
+            Assert.AreEqual(blog2.Content, "this is the content of test blog 2 with 2 new line \n this is the content of test blog 2 with 2 new line ");
         }
 
 

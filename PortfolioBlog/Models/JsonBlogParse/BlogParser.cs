@@ -11,6 +11,7 @@ namespace PortfolioBlog.Models.JsonBlogParse
         public Blog GetBlog(string json) 
             => JsonConvert.DeserializeObject<Blog>(json);
 
+
     }
 }
 

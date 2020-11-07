@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PortfolioBlog.Models.JsonBlogParse;
 using PortfolioBlogLibrary.GitScraper;
 
 namespace PortfolioBlog
@@ -27,6 +28,7 @@ namespace PortfolioBlog
         {
             services.AddSingleton<HttpClient>();
             services.AddScoped<IGitHubScraper, GitHubScraper>();
+            services.AddScoped<IBlogParser, BlogParser>();
 
             services.AddControllersWithViews();
 
