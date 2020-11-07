@@ -22,7 +22,7 @@ namespace PortfolioBlog.Controllers
             _hostingEnvironment = hostEnv;
             _blogParser = blogParser;
         }
-        public IActionResult DiplayBlog(Blog blog)
+        public IActionResult DisplayBlog(Blog blog)
         {
             return View(blog);
         }
@@ -31,8 +31,11 @@ namespace PortfolioBlog.Controllers
         {
             var filePaths = Directory.GetFiles(_hostingEnvironment.ContentRootPath + @"\BlogPosts");
             filePaths.ForEach(x => Debug.WriteLine(x));
-            // need to convert blog path to actuall json string
-            IEnumerable<Blog> blogs = filePaths.Select(path => _blogParser.GetBlog(path));
+            IEnumerable<Blog> blogs = 
+                filePaths
+                .Select(path => _blogParser
+                    .GetBlog(System.IO.File.ReadAllText(path)))
+                    .OrderBy(prop => prop.Id);
             return View(blogs);
         }
     }
