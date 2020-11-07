@@ -1,7 +1,13 @@
-﻿@{ 
+﻿@model IEnumerable<PortfolioBlog.Models.Blog>
+@{ 
 
     ViewData["Title"] = "Blog";
 }
 
 <h1>@ViewData["Title"]</h1>
 
+@foreach (var blog in Model)
+{
+    @Html.ActionLink(blog.Title, "DisplayBlog", "Blog", blog)
+
+}
