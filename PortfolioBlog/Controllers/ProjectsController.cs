@@ -13,12 +13,10 @@ namespace PortfolioBlog.Controllers
 {
     public class ProjectsController : Controller
     {
-        HttpClient _client;
         IGitHubScraper _gitHubScraper;
         public ProjectsController(HttpClient client, IGitHubScraper gitHubScraper)
         {
             _gitHubScraper = gitHubScraper;
-            _client = client;
         }
         
             
